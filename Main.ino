@@ -10,15 +10,15 @@ int antDirection;           //starting direction (also random)
 
 
 
-int  rows = 13;        //display size
-int  columns = 8;
+int  rows = 14;        //display size
+int  columns = 9;
 
-boolean state[13][8];
+boolean state[14][9];
 
 void setup() {
   LedSign::Init(GRAYSCALE);           
-  for(int j = 0; j < rows; j++){
-    for(int i = 0; i < columns; i++){
+  for(int j = 1; j < rows; j++){
+    for(int i = 1; i < columns; i++){
       state[j][i] = false;
     }
   }
