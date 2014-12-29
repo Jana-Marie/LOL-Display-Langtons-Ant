@@ -5,6 +5,8 @@ int del = 80; // change delay between ant moves
 //int antLoc[]{7,4};                      //Starting point (is set to random right now
 int antLoc[]{7,4};
 
+int antLocold[]{7,4};  //for a fading effect
+
 int antDirection = 4;           //starting direction (also random)
 
 
@@ -15,7 +17,7 @@ int  columns = 9;
 boolean state[14][9];
 
 void setup() {
-  LedSign::Init();           
+  LedSign::Init(GRAYSCALE);           
   for(int j = 0; j < rows; j++){
     for(int i = 0; i < columns; i++){
       state[j][i] = false;
@@ -77,7 +79,7 @@ void updateScene(){
     }
     state[antLoc[0]][antLoc[1]] = true;
     turnRight();
-    LedSign::Set(antLoc[0],antLoc[1],1);
+    LedSign::Set(antLoc[0],antLoc[1],4);
   } 
   else {
     if(antLoc[0] > 13){
@@ -94,8 +96,16 @@ void updateScene(){
     }
     state[antLoc[0]][antLoc[1]] = false;
     turnLeft();
-    LedSign::Set(antLoc[0],antLoc[1],0);
+    LedSign::Set(antLoc[0],antLoc[1],3);
   }
+  if(state[antLocold[0]][antLocold[1]] == 0){
+    LedSign::Set(antLocold[0],antLocold[1],0);
+  }else{
+    LedSign::Set(antLocold[0],antLocold[1],7);
+  }
+
+  antLocold[0] = antLoc[0];
+  antLocold[1] = antLoc[1];
   delay(del);
 }
 
