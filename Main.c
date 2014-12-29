@@ -100,7 +100,7 @@ void updateScene(){
   }
   if(state[antLocold[0]][antLocold[1]] == 0){
     LedSign::Set(antLocold[0],antLocold[1],0);
-  }else{
+  }else if(state[antLocold[0]][antLocold[1]] == 1){
     LedSign::Set(antLocold[0],antLocold[1],7);
   }
 
