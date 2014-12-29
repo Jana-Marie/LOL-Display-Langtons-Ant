@@ -79,7 +79,7 @@ void updateScene(){
     }
     state[antLoc[0]][antLoc[1]] = true;
     turnRight();
-    LedSign::Set(antLoc[0],antLoc[1],4);
+    LedSign::Set(antLoc[0],antLoc[1],3);
   } 
   else {
     if(antLoc[0] > 13){
