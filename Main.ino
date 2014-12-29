@@ -10,10 +10,10 @@ int antDirection;           //starting direction (also random)
 
 
 
-int  rows = 14;        //display size
-int  columns = 9;
+int  rows = 13;        //display size
+int  columns = 8;
 
-boolean state[14][9];
+boolean state[13][8];
 
 void setup() {
   LedSign::Init(GRAYSCALE);           
