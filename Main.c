@@ -3,9 +3,9 @@
 int del = 80; // change delay between ant moves
 
 //int antLoc[]{7,4};                      //Starting point (is set to random right now
-int antLoc[]{random(2,12),random(1,8)};
+int antLoc[]{7,4};
 
-int antDirection = random(1,4);           //starting direction (also random)
+int antDirection = 4;           //starting direction (also random)
 
 
 
