@@ -1,13 +1,12 @@
 #include "Charliplexing.h"
+#include <Entropy.h>
 
 int del = 80; // change delay between ant moves
 
-//int antLoc[]{7,4};                      //Starting point (is set to random right now
-int antLoc[]{7,4};
-
+int antLoc[]{7,4};//it will be randomseeded late
 int antLocold[]{7,4};  //for a fading effect
 
-int antDirection = 4;           //starting direction (also random)
+int antDirection;           //starting direction (also random)
 
 
 
@@ -23,6 +22,10 @@ void setup() {
       state[j][i] = false;
     }
   }
+  Entropy.initialize();
+  antLoc[0] = Entropy.random(1,13);
+  antLoc[1] = Entropy.random(1,8);
+  antDirection = Entropy.random(1,4);
 }
 
 void loop(){
